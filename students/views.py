@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from django.shortcuts import render
 from django.http import HttpResponse
 
@@ -5,7 +6,28 @@ from django.http import HttpResponse
 
 
 def students_list(request):
-    return render(request, 'students/students_list.html', {})
+    students = (
+        {
+            'id': 1,
+            'first_name': 'Віталій',
+            'last_name': 'Подоба',
+            'ticket': 213,
+            'img': 'img/podoba3.jpg'},
+        {
+            'id': 2,
+            'first_name': 'Корост',
+            'last_name': 'Андрій',
+            'ticket': 111,
+            'img': 'img/me.jpeg'},
+        {
+            'id': 3,
+            'first_name': 'Притула',
+            'last_name': 'Тарас',
+            'ticket': 515,
+            'img': 'img/piv.png'},
+
+    )
+    return render(request, 'students/students_list.html', {'students': students})
 
 
 def students_add(request):
@@ -23,7 +45,23 @@ def students_delete(request, sid):
 
 
 def groups_list(request):
-    return HttpResponse('<h1>Groups Listing</h1>')
+    groups = (
+        {
+            'id': 1,
+            'group_name': 'МтМ-21',
+            'group_lider': {'id': 1, 'name': 'Сергій Притула'}},
+        {
+            'id': 2,
+            'group_name': 'МтМ-22',
+            'group_lider': {'id': 2, 'name': 'Дмитро Дубілет'}},
+        {
+            'id': 3,
+            'group_name': 'МтМ-23',
+            'group_lider': {'id': 3, 'name': 'Оксана Варнава'}
+        },
+
+    )
+    return render(request, 'students/groups_list.html', {'groups': groups})
 
 
 def groups_add(request):
