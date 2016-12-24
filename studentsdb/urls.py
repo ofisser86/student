@@ -14,9 +14,11 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 from django.conf.urls import include, url
+from django.conf import settings
 from django.contrib import admin
+from django.conf.urls.static import static
 from students.views import students, groups, journal
-
+from .settings import MEDIA_ROOT, DEBUG
 
 urlpatterns = [
     # Students urls
@@ -40,4 +42,8 @@ urlpatterns = [
     url(r'^journal/(?P<sid>\d+)/$', journal.journal_visit, name='visit_page'),
 
     url(r'^admin/', admin.site.urls),
-]
+
+    # serve files from media folder
+
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
