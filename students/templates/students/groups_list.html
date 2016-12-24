@@ -23,8 +23,8 @@
         {% for group in groups %}
             <tr>
                 <td>{{ forloop.counter }}</td>
-                <td><a href=" {% url 'groups_edit' group.id%}"></a>{{ group.group_name }}</td>
-                <td><a href="{% url 'groups_edit' group.group_lider.id%}">{{ group.group_lider.name }}</a></td>
+                <td><a href=" {% url 'groups_edit' group.id%}">{{ group.group_name }}</a></td>
+                <td><a href="{% url 'students_edit' group.group_lider.id%}">{{ group.group_lider.name }}</a></td>
                 <td>
                     <div class="btn-group">
                         <button type="button" class="btn btn-default dropdown-toggle"
@@ -33,7 +33,6 @@
                         </button>
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="{% url "groups_edit" group.id %}">Редагувати</a></li>
-                            <li><a href="/journal/{{ student.id }}">Відвідування</a></li>
                             <li><a href="{% url "groups_delete" group.id %}">Видалити</a></li>
                         </ul>
                     </div>

@@ -15,21 +15,29 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
-from students import views
+from students.views import students, groups, journal
 
 
 urlpatterns = [
     # Students urls
-    url(r'^$', views.students_list, name='home'),
-    url(r'^admin/', admin.site.urls),
-    url(r'^students/add/$', views.students_add, name='students_add'),
-    url(r'^students/(?P<sid>\d+)/edit/$', views.students_edit, name='students_edit'),
-    url(r'^students/(?P<sid>\d+)/delete/$', views.students_delete, name='students_delete'),
+    url(r'^$', students.students_list, name='home'),
+
+    url(r'^students/add/$', students.students_add, name='students_add'),
+    url(r'^students/(?P<sid>\d+)/edit/$', students.students_edit, name='students_edit'),
+    url(r'^students/(?P<sid>\d+)/delete/$', students.students_delete, name='students_delete'),
 
     # Groups url
 
-    url(r'^groups/$', views.groups_list, name='groups_list'),
-    url(r'^groups/add/$', views.groups_add, name='groups_add'),
-    url(r'^groups/(?P<gid>\d+)/edit/$', views.groups_edit, name='groups_edit'),
-    url(r'^groups/(?P<gid>\d+)/delete/$', views.groups_delete, name='groups_delete'),
+    url(r'^groups/$', groups.groups_list, name='groups_list'),
+    url(r'^groups/add/$', groups.groups_add, name='groups_add'),
+    url(r'^groups/(?P<gid>\d+)/edit/$', groups.groups_edit, name='groups_edit'),
+    url(r'^groups/(?P<gid>\d+)/delete/$', groups.groups_delete, name='groups_delete'),
+
+    # Journal url
+
+    url(r'^journal/$', journal.journal, name='journal'),
+    url(r'^journal/update', journal.journal_update, name='update'),
+    url(r'^journal/(?P<sid>\d+)/$', journal.journal_visit, name='visit_page'),
+
+    url(r'^admin/', admin.site.urls),
 ]
