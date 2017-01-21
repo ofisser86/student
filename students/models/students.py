@@ -32,6 +32,13 @@ class Student(models.Model):
         verbose_name='Дата народження',
         null=True
     )
+    student_group = models.ForeignKey(
+        'Group',
+        verbose_name='Група',
+        blank=False,
+        null=True,
+        on_delete=models.PROTECT
+    )
     photo = models.ImageField(
         blank=True,
         verbose_name='Фото',

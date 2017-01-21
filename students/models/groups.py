@@ -14,7 +14,7 @@ class Group(models.Model):
     title = models.CharField(
         max_length=256,
         blank=False,
-        verbose_name="Ім'я студента"
+        verbose_name="Назва групи"
     )
     leader = models.OneToOneField(
         'Student',
