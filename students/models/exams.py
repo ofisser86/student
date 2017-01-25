@@ -19,9 +19,9 @@ class Exam(models.Model):
     teacher = models.CharField(
         max_length=256,
         blank=False,
-        verbose_name="Назва предмету"
+        verbose_name="Ім'я викладача"
     )
-    exam_group = models.OneToOneField(
+    exam_group = models.ForeignKey(
         'Group',
         blank=True,
         null=True,
@@ -40,6 +40,6 @@ class Exam(models.Model):
 
     def __unicode__(self):
         if self.exam_group:
-            return "%s (%s )" % (self.title, self.exam_group.title)
+            return "%s (%s )" % (self.subject_title, self.exam_group.title)
         else:
             return "%s" % self.subject_title

@@ -7,9 +7,9 @@
 {% block title %}Групи Студентів{% endblock title %}
 
 {% block content %}
-    <a href="{% url "students_add" %}" class="btn btn-primary">Додати групу</a>
+    <a href="{% url "groups_add" %}" class="btn btn-primary">Додати групу</a>
 
-    <!-- Start Students Listing -->
+    <!-- Start Groups Listing -->
     <table class="table">
     {% with order_by=request.GET.order_by reverse=request.GET.reverse %}
         <thead>
@@ -56,7 +56,7 @@
 
         </tbody>
     </table>
-    <!-- End Students Listing -->
+    <!-- End Groups Listing -->
 {% if groups.has_other_pages %}
     {% with order_by=request.GET.order_by reverse=request.GET.reverse %}
     <nav>
