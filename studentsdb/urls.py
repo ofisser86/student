@@ -18,7 +18,7 @@ from django.conf import settings
 from django.contrib import admin
 from django.conf.urls.static import static
 from students.views import students, groups, journal, exams
-# from .settings import MEDIA_ROOT, DEBUG
+from .settings import MEDIA_ROOT, DEBUG
 
 urlpatterns = [
     # Students urls
