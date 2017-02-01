@@ -47,6 +47,8 @@
                         href="{% url "groups_list" %}">Групи</a></li>
                 <li role="presentation" {% if '/exams' in request.path %}class="active"{% endif %}><a
                         href="{% url "exams" %}">Іспити</a></li>
+                <li role="presentation" {% if '/contact-admin' in request.path %}class="active"{% endif %}><a
+                        href="{% url "contact_admin" %}">Контакт</a></li>
             </ul>
         </div>
     </div>
@@ -72,7 +74,7 @@
     <!-- Start Footer -->
     <div class="row" id="footer">
         <div class="col-xs-12">
-            &copy; 2016 Сервіс Обліку Студентів
+            &copy; 2017 Сервіс Обліку Студентів
         </div>
     </div>
     <!-- End Footer -->
