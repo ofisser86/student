@@ -1,0 +1,33 @@
+{% extends 'students/base.html' %}
+
+{% load static from staticfiles %}
+{% load crispy_forms_tags %}
+
+{% block meta_title %}Редагувати Студенти{% endblock meta_title %}
+
+{% block title %}Редагувати Студента{% endblock title %}
+{% block status_message %}
+
+    {% if errors %}
+
+        <div class="alert alert-warning" role="alert">
+
+            Будь-ласка, виправте наступні помилки
+
+        </div>
+
+    {% endif %}
+{% endblock status_message %}
+
+{% block content %}
+
+{% crispy form %}
+
+
+{#    <form action='{% url 'students_edit' object.id %}' method='post'>#}
+{#        {% csrf_token %}#}
+{#        {{ form.as_p }}#}
+{#        <input type='submit' value='Зберегти' name='send_button'/>#}
+{#    </form>#}
+
+{% endblock content %}
