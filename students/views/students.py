@@ -6,7 +6,7 @@ from django.urls import reverse
 from datetime import datetime
 
 from django.forms import ModelForm
-from django.views.generic import UpdateView
+from django.views.generic import UpdateView, DeleteView
 from crispy_forms.helper import FormHelper
 from  crispy_forms.layout import Submit
 from crispy_forms.bootstrap import FormActions
@@ -174,5 +174,9 @@ class StudentUpdateView(UpdateView):
             return super(StudentUpdateView, self).post(request, *args, **kwargs)
 
 
-def students_delete(request, sid):
-    return HttpResponse('<h1>Student Delete Form %s </h1>' % sid)
+class StudentDeleteView(DeleteView):
+    model = Student
+    template_name = 'students/students_confirm_delete.html'
+
+    def get_success_url(self):
+        return u'%s?status_message=Студента успішно видалено!' % reverse('home')
