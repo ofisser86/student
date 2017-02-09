@@ -1,176 +1,80 @@
-{% extends "students/base.html" %}
+{% extends 'students/base.html' %}
 
 {% load static from staticfiles %}
 
-{% block meta_title %}Студенти{% endblock meta_title %}
+{% block meta_title %}Облік Відвідування{% endblock meta_title %}
 
-{% block title %}Групи Студентів{% endblock title %}
+{% block title %}Облік Відвідування{% endblock title %}
 
 
 {% block content %}
-    <h3><span class="journal_rows">&#8592;</span>Грудень 2016 року<span class="journal_rows">&#8594;</span></h3>
 
-    <table class="table table-bordered table-hover table-strip">
-  <thead>
-    <tr>
-      <th>#</th>
-      <th>Студент</th>
-      <th>Ср 1</th>
-      <th>Чт 2</th>
-      <th>Пт 3</th>
-      <th>Сб 4</th>
-      <th>Нд 5</th>
-      <th>Пн 6</th>
-      <th>Вт 7</th>
-            <th>Ср 8</th>
-      <th>Чт 9</th>
-      <th>Пт 10</th>
-      <th>Сб 11</th>
-      <th>Нд 12</th>
-      <th>Пн 13</th>
-      <th>Вт 14</th>
-              <th>Ср 15</th>
-      <th>Чт 16</th>
-      <th>Пт 17</th>
-      <th>Сб 18</th>
-      <th>Нд 19</th>
-      <th>Пн 20</th>
-      <th>Вт 21</th>
-              <th>Ср 22</th>
-      <th>Чт 23</th>
-      <th>Пт 24</th>
-      <th>Сб 25</th>
-      <th>Нд 26</th>
-      <th>Пн 27</th>
-      <th>Вт 28</th>
-        <th>Ср 29</th>
-      <th>Чт 30</th>
-      <th>Пт 31</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-        <td><a href="{% url 'students_edit' 1 %}">Віталій Подоба</a></td>
-      <td><input type="checkbox" name="animal" value="Cat" /></td>
-      <td><input type="checkbox" name="animal" value="Cat" /></td>
-        <td><input type="checkbox" name="animal" value="Cat" /></td>
-        <td><input type="checkbox" name="animal" value="Cat" /></td>
-        <td><input type="checkbox" name="animal" value="Cat" /></td>
-        <td><input type="checkbox" name="animal" value="Cat" /></td>
-        <td><input type="checkbox" name="animal" value="Cat" /></td>
-        <td><input type="checkbox" name="animal" value="Cat" /></td>
-        <td><input type="checkbox" name="animal" value="Cat" /></td>
-        <td><input type="checkbox" name="animal" value="Cat" /></td>
-        <td><input type="checkbox" name="animal" value="Cat" /></td>
-        <td><input type="checkbox" name="animal" value="Cat" /></td>
-        <td><input type="checkbox" name="animal" value="Cat" /></td>
-        <td><input type="checkbox" name="animal" value="Cat" /></td>
-        <td><input type="checkbox" name="animal" value="Cat" /></td>
-        <td><input type="checkbox" name="animal" value="Cat" /></td>
-        <td><input type="checkbox" name="animal" value="Cat" /></td>
-        <td><input type="checkbox" name="animal" value="Cat" /></td>
-        <td><input type="checkbox" name="animal" value="Cat" /></td>
-        <td><input type="checkbox" name="animal" value="Cat" /></td>
-        <td><input type="checkbox" name="animal" value="Cat" /></td>
-        <td><input type="checkbox" name="animal" value="Cat" /></td>
-        <td><input type="checkbox" name="animal" value="Cat" /></td>
-        <td><input type="checkbox" name="animal" value="Cat" /></td>
-        <td><input type="checkbox" name="animal" value="Cat" /></td>
-        <td><input type="checkbox" name="animal" value="Cat" /></td>
-        <td><input type="checkbox" name="animal" value="Cat" /></td>
-        <td><input type="checkbox" name="animal" value="Cat" /></td>
-        <td><input type="checkbox" name="animal" value="Cat" /></td>
-        <td><input type="checkbox" name="animal" value="Cat" /></td>
-        <td><input type="checkbox" name="animal" value="Cat" /></td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-        <td><a href="{% url 'students_edit' 2 %}">Корост Андрій</a></td>
-      <td><input type="checkbox" name="animal" value="Cat" /></td>
-      <td><input type="checkbox" name="animal" value="Cat" /></td>
-                <td><input type="checkbox" name="animal" value="Cat" /></td>
-        <td><input type="checkbox" name="animal" value="Cat" /></td>
-        <td><input type="checkbox" name="animal" value="Cat" /></td>
-        <td><input type="checkbox" name="animal" value="Cat" /></td>
-        <td><input type="checkbox" name="animal" value="Cat" /></td>
-        <td><input type="checkbox" name="animal" value="Cat" /></td>
-        <td><input type="checkbox" name="animal" value="Cat" /></td>
-        <td><input type="checkbox" name="animal" value="Cat" /></td>
-        <td><input type="checkbox" name="animal" value="Cat" /></td>
-        <td><input type="checkbox" name="animal" value="Cat" /></td>
-        <td><input type="checkbox" name="animal" value="Cat" /></td>
-        <td><input type="checkbox" name="animal" value="Cat" /></td>
-        <td><input type="checkbox" name="animal" value="Cat" /></td>
-        <td><input type="checkbox" name="animal" value="Cat" /></td>
-        <td><input type="checkbox" name="animal" value="Cat" /></td>
-        <td><input type="checkbox" name="animal" value="Cat" /></td>
-        <td><input type="checkbox" name="animal" value="Cat" /></td>
-        <td><input type="checkbox" name="animal" value="Cat" /></td>
-        <td><input type="checkbox" name="animal" value="Cat" /></td>
-        <td><input type="checkbox" name="animal" value="Cat" /></td>
-        <td><input type="checkbox" name="animal" value="Cat" /></td>
-        <td><input type="checkbox" name="animal" value="Cat" /></td>
-        <td><input type="checkbox" name="animal" value="Cat" /></td>
-        <td><input type="checkbox" name="animal" value="Cat" /></td>
-        <td><input type="checkbox" name="animal" value="Cat" /></td>
-        <td><input type="checkbox" name="animal" value="Cat" /></td>
-        <td><input type="checkbox" name="animal" value="Cat" /></td>
-        <td><input type="checkbox" name="animal" value="Cat" /></td>
-        <td><input type="checkbox" name="animal" value="Cat" /></td>
+    {% if not students %}
+        <div class="alert alert-warning">
 
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-        <td><a href="{% url 'students_edit' 3 %}">Притула Тарас</a></td>
-      <td><input type="checkbox" name="animal" value="Cat" /></td>
-      <td><input type="checkbox" name="animal" value="Cat" /></td>
-                <td><input type="checkbox" name="animal" value="Cat" /></td>
-        <td><input type="checkbox" name="animal" value="Cat" /></td>
-        <td><input type="checkbox" name="animal" value="Cat" /></td>
-        <td><input type="checkbox" name="animal" value="Cat" /></td>
-        <td><input type="checkbox" name="animal" value="Cat" /></td>
-        <td><input type="checkbox" name="animal" value="Cat" /></td>
-        <td><input type="checkbox" name="animal" value="Cat" /></td>
-        <td><input type="checkbox" name="animal" value="Cat" /></td>
-        <td><input type="checkbox" name="animal" value="Cat" /></td>
-        <td><input type="checkbox" name="animal" value="Cat" /></td>
-        <td><input type="checkbox" name="animal" value="Cat" /></td>
-        <td><input type="checkbox" name="animal" value="Cat" /></td>
-        <td><input type="checkbox" name="animal" value="Cat" /></td>
-        <td><input type="checkbox" name="animal" value="Cat" /></td>
-        <td><input type="checkbox" name="animal" value="Cat" /></td>
-        <td><input type="checkbox" name="animal" value="Cat" /></td>
-        <td><input type="checkbox" name="animal" value="Cat" /></td>
-        <td><input type="checkbox" name="animal" value="Cat" /></td>
-        <td><input type="checkbox" name="animal" value="Cat" /></td>
-        <td><input type="checkbox" name="animal" value="Cat" /></td>
-        <td><input type="checkbox" name="animal" value="Cat" /></td>
-        <td><input type="checkbox" name="animal" value="Cat" /></td>
-        <td><input type="checkbox" name="animal" value="Cat" /></td>
-        <td><input type="checkbox" name="animal" value="Cat" /></td>
-        <td><input type="checkbox" name="animal" value="Cat" /></td>
-        <td><input type="checkbox" name="animal" value="Cat" /></td>
-        <td><input type="checkbox" name="animal" value="Cat" /></td>
-        <td><input type="checkbox" name="animal" value="Cat" /></td>
-        <td><input type="checkbox" name="animal" value="Cat" /></td>
+            Поки немає жодного студента в базі. Будь-ласка,
+            <a href="{% url 'students_add' %}">додайте</a> першого.
+        </div>
+    {% else %}
 
-    </tr>
-  </tbody>
-</table>
+        <p id="journal-nav" class="text-center">
+            <a href="?month={{ prev_month }}" title="Попередній Місяць">&larr;</a>
+            <!-- TODO: translate month name -->
+            <strong> {{ month_verbose }} {{ year }}</strong>
+            <a href="?month={{ next_month }}" title="Наступний Місяць">&rarr;</a>
+        </p>
+        <table class="table table-hover table-striped table-bordered" id="students-journal">
+            <thead>
+            <tr class="header">
+                <th class="num">#</th>
+                <th class="name">Студент</th>
+                {% for day in month_header %}
+                    <th class="day-header">
+                        {{ day.verbose }}
+                        <br/>
+                        {{ day.day }}
+                    </th>
+                {% endfor %}
+            </tr>
+            </thead>
+            <tbody>
 
-    <!-- End Students Listing -->
+            {% csrf_token %}
 
-    <nav>
-        <ul class="pagination">
-            <li><a href="#">&laquo;</a></li>
-            <li><a href="#">1</a></li>
-            <li class="active"><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">4</a></li>
-            <li><a href="#">5</a></li>
-            <li><a href="#">&raquo;</a></li>
-        </ul>
-    </nav>
+            {% for student in students %}
+                <tr>
+                    <td>
+
+                        {% if is_paginated %}
+                            {{ page_obj.start_index|add:forloop.counter|add:"-1" }}
+                        {% else %}
+                            {{ forloop.counter }}
+                        {% endif %}
+                    </td>
+                    <td>
+                        <a title="Редагувати" target="_blank" href="{% url 'students_edit' student.id %}">
+                            {{ student.fullname }}
+                        </a>
+                    </td>
+                    {% for day in student.days %}
+                        <td class="day-box">
+                            <input type="checkbox" data-student-id="{{ student.id }}" data-date="{{ day.date }}"
+                                   data-url="{{ student.update_url }}" value="1"{% if day.present %}
+                                   checked="checked" {% endif %}/>
+                        </td>
+                    {% endfor %}
+
+
+                </tr>
+            {% endfor %}
+
+            </tbody>
+        </table>
+
+    {% endif %}
+
+    {% with object_list=students %}
+        {% include 'students/pagination.html' %}
+    {% endwith %}
 
 {% endblock content %}

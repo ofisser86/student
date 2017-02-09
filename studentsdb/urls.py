@@ -19,6 +19,7 @@ from django.contrib import admin
 from django.conf.urls.static import static
 from students.views import students, groups, journal, exams, contact_admin
 from students.views.students import StudentUpdateView, StudentDeleteView
+from students.views.journal import JournalView
 from .settings import MEDIA_ROOT, DEBUG
 
 urlpatterns = [
@@ -38,7 +39,7 @@ urlpatterns = [
 
     # Journal url
 
-    url(r'^journal/$', journal.journal, name='journal'),
+    url(r'^journal/$', JournalView.as_view(), name='journal'),
     url(r'^journal/update', journal.journal_update, name='update'),
     url(r'^journal/(?P<sid>\d+)/$', journal.journal_visit, name='visit_page'),
 
