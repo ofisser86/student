@@ -30,6 +30,7 @@ def paginate(objects, size, request, context, var_name='object_list'):
 
     context[var_name] = object_list
     context['is_paginated'] = object_list.has_other_pages()
-    context['page_obj'] = paginator
+    context['page_obj'] = object_list
+    context['paginator'] = paginator
 
     return context
