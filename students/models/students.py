@@ -49,7 +49,7 @@ class Student(models.Model):
         blank=True,
         verbose_name='Білет',
     )
-    note = models.TextField(
+    notes = models.TextField(
         blank=True,
         verbose_name='Додаткові нотатки'
     )

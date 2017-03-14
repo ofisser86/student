@@ -33,8 +33,8 @@ class StudentAdmin(admin.ModelAdmin):
     search_fields = ['last_name', 'first_name', 'middle_name', 'ticket', 'note']
     form = StudentFormAdmin
 
-    def get_view_on_site_url(self, obj=None):
-        return reverse('students_edit', kwargs={'pk': obj.id})
+    def view_on_site(self, obj):
+        return reverse('student_edit', kwargs={'pk': obj.id})
 
 
 # Register your models here.

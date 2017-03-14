@@ -57,30 +57,30 @@ def students_add(request):
             data = {'middle_name': request.POST.get('middle_name'), 'notes': request.POST.get('notes')}
 
             # validate user input
-            first_name = request.POST.get('first_name', '').strip()
+            first_name = request.POST.get('first_name', ' ').strip()
             if not first_name:
                 errors['first_name'] = u'Ім’я є обов’язковим'
             else:
                 data['first_name'] = first_name
 
-            last_name = request.POST.get('last_name', '').strip()
+            last_name = request.POST.get('last_name', ' ').strip()
             if not last_name:
                 errors['last_name'] = u'Прізвище є обов’язковим'
             else:
                 data['last_name'] = last_name
 
-            birthday = request.POST.get('birthday', '').strip()
+            birthday = request.POST.get('birthday', ' ').strip()
             if not birthday:
                 errors['birthday'] = u'Дата народження є обов’язковою'
             else:
                 try:
-                    datetime.strftime(birthday, '%Y-%m-%d')
+                    datetime.strptime(birthday, '%Y-%m-%d')
                 except Exception:
                     errors['birthday'] = u'Введіть коректний формат дати (напр. 1984-12-30)'
                 else:
                     data['birthday'] = birthday
 
-            ticket = request.POST.get('ticket', '').strip()
+            ticket = request.POST.get('ticket', ' ').strip()
             if not ticket:
                 errors['ticket'] = u'Номер білета є обов’язковим'
             else:
