@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 
 from datetime import datetime, date
 from dateutil.relativedelta import relativedelta
@@ -14,6 +14,25 @@ from ..models import MonthJournal, Student
 
 class JournalView(TemplateView):
     template_name = 'students/journal.html'
+
+    def post(self, request, *args, **kwargs):
+        data = request.POST
+
+        # prepare student, dates and presence data
+        current_date = datetime.strptime(data['date'], '%Y-%m-%d').date()
+        month = date(current_date.year, current_date.month, 1)
+        present = data['present'] and True or False
+        student = Student.objects.get(pk=data['pk'])
+
+        # get or create journal object for given student and month
+        journal = MonthJournal.objects.get_or_create(student=student, date=month)[0]
+
+        # set new presence on journal for given student and save res\
+        setattr(journal, 'present_day%d' % current_date.day, present)
+        journal.save()
+
+        # return success status
+        return JsonResponse({'status': 'success'})
 
     def get_context_data(self, **kwargs):
         # get context data from TemplateView class
@@ -73,7 +92,7 @@ class JournalView(TemplateView):
             students.append({
                 'fullname': u'%s %s' % (student.last_name, student.first_name), 'days': days, 'id': student.id,
                 'update_url': update_url, })
-            # apply pagination, 5 students per page
+        # apply pagination, 5 students per page
         context = paginate(students, 5, self.request, context, var_name='students')
         # finally return updated context
         # with paginated
