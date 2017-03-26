@@ -67,8 +67,12 @@ class JournalView(TemplateView):
         # elif kwargs.get('pk'):
         #     queryset = [Student.objects.get(pk=kwargs['pk'])]
         # else:
-            # get all students from database
-        queryset = Student.objects.all().order_by('last_name')
+        # get all students from database or just one if we need to
+        # display journal for one student
+        if kwargs.get('pk'):
+            queryset = [Student.objects.get(pk=kwargs['pk'])]
+        else:
+            queryset = Student.objects.all().order_by('last_name')
         # url to update student presence, for form post
         update_url = reverse('journal')
         # go over all students and collect data about presence

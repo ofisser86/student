@@ -39,9 +39,8 @@ urlpatterns = [
 
     # Journal url
 
-    url(r'^journal/$', JournalView.as_view(), name='journal'),
+    url(r'^journal/(?P<pk>\d+)?/?$', JournalView.as_view(), name='journal'),
     url(r'^journal/update', journal.journal_update, name='update'),
-    url(r'^journal/(?P<sid>\d+)/$', journal.journal_visit, name='visit_page'),
 
     # Exam url
     url(r'^exams/$', exams.exams_list, name='exams'),
