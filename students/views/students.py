@@ -11,12 +11,19 @@ from crispy_forms.helper import FormHelper
 from  crispy_forms.layout import Submit
 from crispy_forms.bootstrap import FormActions
 
+from ..util import paginate, get_current_group
+
 from ..models.students import Student
 from ..models.groups import Group
 
 
 def students_list(request):
-    students = Student.objects.all()
+    current_group = get_current_group(request)
+    if current_group:
+        students = Student.objects.filter(student_group=current_group)
+    else:
+        students = Student.objects.all()
+
     students = students.order_by('last_name')
     # try to order students list
 

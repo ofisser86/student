@@ -42,3 +42,8 @@ th.day-header {
 #ajax-progress-indicator {
     display: none;
  }
+
+.input-group{
+    width: 300px;
+}
+
