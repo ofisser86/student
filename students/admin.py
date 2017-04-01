@@ -34,7 +34,7 @@ class StudentAdmin(admin.ModelAdmin):
     form = StudentFormAdmin
 
     def view_on_site(self, obj):
-        return reverse('student_edit', kwargs={'pk': obj.id})
+        return reverse('students_edit', kwargs={'pk': obj.id})
 
 
 # Register your models here.
