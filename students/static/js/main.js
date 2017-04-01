@@ -22,10 +22,13 @@ function initJournal() {
             'error': function (xhr, status, error) {
                 alert(error);
                 indicator.hide();
+                $('.alert-danger').show();
             },
             'success': function (data, status, xhr) {
                 //alert(data['status']).alert(data['key'])
                 indicator.hide();
+
+
             }
         });
     });
@@ -129,6 +132,7 @@ function initEditionStudentPage() {
                 'keyboard': false,
                 'backdrop': false,
                 'show': true
+
             });
             },
             'error': function () {

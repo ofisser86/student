@@ -39,7 +39,7 @@ th.day-header {
   vertical-align: middle !important;
   text-align: center;
 }
-#ajax-progress-indicator {
+#ajax-progress-indicator, .alert-danger {
     display: none;
  }
 
