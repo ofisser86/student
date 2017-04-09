@@ -17,10 +17,17 @@ from django.conf.urls import include, url
 from django.conf import settings
 from django.contrib import admin
 from django.conf.urls.static import static
+from django.views.i18n import JavaScriptCatalog
+
 from students.views import students, groups, journal, exams, contact_admin
 from students.views.students import StudentUpdateView, StudentDeleteView
 from students.views.journal import JournalView
 from .settings import MEDIA_ROOT, DEBUG
+
+js_info_dict = {
+    'packages': ('my.package',),
+
+}
 
 urlpatterns = [
     # Students urls
@@ -53,6 +60,10 @@ urlpatterns = [
     url(r'^contact-admin/$', contact_admin.contact_admin, name='contact_admin'),
     # Form contact with used django-contact-form
     # url(r'^contact/', include('contact_form.urls')),
+
+    # i18N
+
+    url(r'^jsi18n/$', JavaScriptCatalog.as_view(), name='js_info_dict'),
 
     url(r'^admin/', admin.site.urls),
 
