@@ -21,6 +21,8 @@ from students.views import students, groups, journal, exams, contact_admin
 from students.views.students import StudentUpdateView, StudentDeleteView
 from students.views.journal import JournalView
 from .settings import MEDIA_ROOT, DEBUG
+if settings.DEBUG:
+    import debug_toolbar
 
 urlpatterns = [
     # Students urls
@@ -55,6 +57,10 @@ urlpatterns = [
     # url(r'^contact/', include('contact_form.urls')),
 
     url(r'^admin/', admin.site.urls),
+
+    # Debug toolbar
+
+    url(r'^__debug__/', include(debug_toolbar.urls))
 
     # serve files from media folder
 
