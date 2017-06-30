@@ -20,6 +20,8 @@ from django.conf.urls.static import static
 from students.views import students, groups, journal, exams, contact_admin
 from students.views.students import StudentUpdateView, StudentDeleteView
 from students.views.journal import JournalView
+from students.views.set_language import set_language
+from django.views.i18n import JavaScriptCatalog
 from .settings import MEDIA_ROOT, DEBUG
 if settings.DEBUG:
     import debug_toolbar
@@ -60,8 +62,12 @@ urlpatterns = [
 
     # Debug toolbar
 
-    url(r'^__debug__/', include(debug_toolbar.urls))
+    url(r'^__debug__/', include(debug_toolbar.urls)),
 
+    # Translate
+
+    url(r'^jsi18n/$', JavaScriptCatalog.as_view(), name='javascript-catalog'),
+    url('^set-language/$',  set_language, name='set_language')
     # serve files from media folder
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

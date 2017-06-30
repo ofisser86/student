@@ -38,6 +38,25 @@
 
             </select>
         </div>
+        <!-- Language Select -->
+<div class="col-xs-1" id='lang-select'>
+    <div class='lang-select-form'>
+        <form action="{% url "set_language" %}" method='post'>{% csrf_token %}
+            <input type='hidden' name='lang' value='uk'>
+            <input type='hidden' name='return-path' value='{{request.path}}'>
+            <button type='submit' class='btn btn-link'>Укр</button>
+        </form>
+    </div>
+    |
+    <div class='lang-select-form'>
+        <form action="{% url "set_language" %}" method='post'>{% csrf_token %}
+            <input type='hidden' name='lang' value='en'>
+            <input type='hidden' name='return-path' value='{{request.path}}'>
+            <button type='submit' class='btn btn-link'>Eng</button>
+        </form>
+    </div>
+</div>
+<!-- End Language Select -->
     </div>
     <!-- End Header -->
 
@@ -110,6 +129,7 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.51/jquery.form.min.js"></script>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
+<script src="{% url 'javascript-catalog' %}"></script>
 <script src="{% static 'js/main.js' %}"></script>
 <script src="{% static 'js/js.cookie.js' %}"></script>
 <script src="https://cdn.jsdelivr.net/bootstrap/3.3.0/js/bootstrap.min.js"></script>

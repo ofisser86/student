@@ -57,6 +57,28 @@ function initGroupSelector() {
     });
 }
 
+function initLanguageSelector() {
+   // look up select element with groups and attach our even handler
+    // on field "change" event
+    $('#language-selector select').change(function(event) {
+        // get value of currently selected group option
+        var language = $(this).val();
+
+        if (language) {
+            // set cookie with expiration date 1 year since now;
+            // cookie creation function takes period in days
+            Cookies.set('LANGUAGE_COOKIE_NAME', language, {'path': '/', 'expires': 365});
+        } else {
+            // otherwise we delete cookie
+            Cookies.remove('LANGUAGE_COOKIE_NAME', {'path': '/'});
+            // and reload the page
+        }
+        location.reload(false);
+
+        return true;
+    });
+}
+
 function initDateFields() {
     $('input.dateinput').datetimepicker({
         'format':'YYYY-MM-DD',
@@ -79,7 +101,7 @@ function initEditStudentForm(form, modal) {
     form.ajaxForm({
         'dataType': 'html',
         'error': function(){
-            alert('Помилка на сервері. Спробуйте будь-ласка пізніше.');
+            alert(gettext('There was an error on the server. Please, try again a bit later.'));
             return false;
         },
         'success': function(data, status, xhr) {
@@ -113,7 +135,7 @@ function initEditionStudentPage() {
             'success': function (data, status, xhr) {
                 // check if we got successfull response from the server
             if (status != 'success'){
-                alert('Помилка на сервері. Спробуйте будь-ласка пізніше.');
+                alert(gettext('There was an error on the server. Please, try again a bit later.'));
                 return false;
                 }
             // update modal window with arrived content from the server
@@ -136,7 +158,7 @@ function initEditionStudentPage() {
             });
             },
             'error': function () {
-                alert('Помилка на сервері. Спробуйте будь-ласка пізніше.');
+                alert(gettext('There was an error on the server. Please, try again a bit later.'));
                 return false;
 
             }
@@ -151,4 +173,5 @@ $(document).ready(function () {
     initGroupSelector();
     initDateFields();
     initEditionStudentPage();
+    initLanguageSelector();
 });

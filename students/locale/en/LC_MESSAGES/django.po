@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-10 12:23+0000\n"
+"POT-Creation-Date: 2017-06-30 11:32+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,6 +16,47 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+#: models/students.py:10
+msgid "Student"
+msgstr ""
+
+#: models/students.py:11 templates/students/base.html:49
+#: templates/students/students_list.html:5
+msgid "Students"
+msgstr ""
+
+#: models/students.py:17 templates/students/students_list.html:28
+msgid "First name"
+msgstr ""
+
+#: models/students.py:22 templates/students/students_list.html:21
+msgid "Last name"
+msgstr ""
+
+#: models/students.py:27
+msgid "Middle name"
+msgstr ""
+
+#: models/students.py:32
+msgid "Date of birth"
+msgstr ""
+
+#: models/students.py:37
+msgid "Group"
+msgstr ""
+
+#: models/students.py:44 templates/students/students_list.html:19
+msgid "Photo"
+msgstr ""
+
+#: models/students.py:50
+msgid "Ticket"
+msgstr ""
+
+#: models/students.py:54
+msgid "Extra notes"
+msgstr ""
 
 #: templates/students/base.html:7 templates/students/base.html:28
 #: templates/students/base.html:84
@@ -34,11 +75,7 @@ msgstr ""
 msgid "All students"
 msgstr ""
 
-#: templates/students/base.html:49
-msgid "Students"
-msgstr ""
-
-#: templates/students/base.html:51
+#: templates/students/base.html:51 templates/students/students_list.html:65
 msgid "Journal"
 msgstr ""
 
@@ -52,4 +89,95 @@ msgstr ""
 
 #: templates/students/base.html:58
 msgid "Contact"
+msgstr ""
+
+#: templates/students/students_confirm_delete.html:5
+#: templates/students/students_confirm_delete.html:7
+msgid "Delete student"
+msgstr ""
+
+#: templates/students/students_confirm_delete.html:15
+#, python-format
+msgid " Are you really want to delete student \"%(object)s\"? "
+msgstr ""
+
+#: templates/students/students_confirm_delete.html:16
+msgid "Yes"
+msgstr ""
+
+#: templates/students/students_confirm_delete.html:17
+msgid "No"
+msgstr ""
+
+#: templates/students/students_list.html:7
+msgid "Students list"
+msgstr ""
+
+#: templates/students/students_list.html:11
+msgid "Add student"
+msgstr ""
+
+#: templates/students/students_list.html:34
+msgid "Ticket #"
+msgstr ""
+
+#: templates/students/students_list.html:39
+#: templates/students/students_list.html:60
+msgid "Actions"
+msgstr ""
+
+#: templates/students/students_list.html:64
+msgid "Edit"
+msgstr ""
+
+#: templates/students/students_list.html:66
+msgid "Delete"
+msgstr ""
+
+#: views/students.py:70
+msgid "First name field is required"
+msgstr ""
+
+#: views/students.py:76
+msgid "Last name field is required"
+msgstr ""
+
+#: views/students.py:82
+msgid "Birthday field is required"
+msgstr ""
+
+#: views/students.py:87
+msgid "Enter correct format date (as example 1984-12-30)"
+msgstr ""
+
+#: views/students.py:93
+msgid "Ticket field is required"
+msgstr ""
+
+#: views/students.py:99
+msgid "Select student group"
+msgstr ""
+
+#: views/students.py:103
+msgid "Select correct group"
+msgstr ""
+
+#: views/students.py:128 views/students.py:176
+msgid "Student added successfully"
+msgstr ""
+
+#: views/students.py:136 views/students.py:180
+msgid "Editing canceled"
+msgstr ""
+
+#: views/students.py:165
+msgid "Save"
+msgstr ""
+
+#: views/students.py:166
+msgid "Cancel"
+msgstr ""
+
+#: views/students.py:190
+msgid "Student deleted"
 msgstr ""

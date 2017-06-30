@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-10 12:23+0000\n"
+"POT-Creation-Date: 2017-06-30 11:32+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,6 +18,47 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: models/students.py:10
+msgid "Student"
+msgstr "Студент"
+
+#: models/students.py:11 templates/students/base.html:49
+#: templates/students/students_list.html:5
+msgid "Students"
+msgstr "Студенти"
+
+#: models/students.py:17 templates/students/students_list.html:28
+msgid "First name"
+msgstr "Ім'я"
+
+#: models/students.py:22 templates/students/students_list.html:21
+msgid "Last name"
+msgstr "Прізвище"
+
+#: models/students.py:27
+msgid "Middle name"
+msgstr "Побатькові"
+
+#: models/students.py:32
+msgid "Date of birth"
+msgstr "День народження"
+
+#: models/students.py:37
+msgid "Group"
+msgstr "Група"
+
+#: models/students.py:44 templates/students/students_list.html:19
+msgid "Photo"
+msgstr "Фото"
+
+#: models/students.py:50
+msgid "Ticket"
+msgstr "Білет"
+
+#: models/students.py:54
+msgid "Extra notes"
+msgstr "Додаткові нотатки"
 
 #: templates/students/base.html:7 templates/students/base.html:28
 #: templates/students/base.html:84
@@ -36,11 +77,7 @@ msgstr "Група"
 msgid "All students"
 msgstr "Всі студенти"
 
-#: templates/students/base.html:49
-msgid "Students"
-msgstr "Студенти"
-
-#: templates/students/base.html:51
+#: templates/students/base.html:51 templates/students/students_list.html:65
 msgid "Journal"
 msgstr "Відвідування"
 
@@ -56,10 +93,93 @@ msgstr "Іспити"
 msgid "Contact"
 msgstr "Контакти"
 
-#~ msgid "Student Account Service"
-#~ msgstr "Сервіс обліку студентів"
+#: templates/students/students_confirm_delete.html:5
+#: templates/students/students_confirm_delete.html:7
+msgid "Delete student"
+msgstr "Видалити студента"
 
-#, fuzzy
-#~| msgid "Student Account Service"
-#~ msgid "Students Account Service"
-#~ msgstr "Сервіс обліку студентів"
+#: templates/students/students_confirm_delete.html:15
+#, python-format
+msgid " Are you really want to delete student \"%(object)s\"? "
+msgstr "Ви дійсно бажаєте видалити студента \"%(object)s\"? "
+
+#: templates/students/students_confirm_delete.html:16
+msgid "Yes"
+msgstr "Так"
+
+#: templates/students/students_confirm_delete.html:17
+msgid "No"
+msgstr "Ні"
+
+#: templates/students/students_list.html:7
+msgid "Students list"
+msgstr "Список студентів"
+
+#: templates/students/students_list.html:11
+msgid "Add student"
+msgstr "Додати студенти"
+
+#: templates/students/students_list.html:34
+msgid "Ticket #"
+msgstr "№ Білету"
+
+#: templates/students/students_list.html:39
+#: templates/students/students_list.html:60
+msgid "Actions"
+msgstr "Дії"
+
+#: templates/students/students_list.html:64
+msgid "Edit"
+msgstr "Редагувати"
+
+#: templates/students/students_list.html:66
+msgid "Delete"
+msgstr "Видалити"
+
+#: views/students.py:70
+msgid "First name field is required"
+msgstr "Поле ім'я є обов'язковим"
+
+#: views/students.py:76
+msgid "Last name field is required"
+msgstr "Поле прізвище є обов'язковим"
+
+#: views/students.py:82
+msgid "Birthday field is required"
+msgstr "Поле День народження є обов'язковим"
+
+#: views/students.py:87
+msgid "Enter correct format date (as example 1984-12-30)"
+msgstr "Введіт корктний ормат дати (напр 1984-12-30)"
+
+#: views/students.py:93
+msgid "Ticket field is required"
+msgstr "Поле білет є обов'язковим"
+
+#: views/students.py:99
+msgid "Select student group"
+msgstr "Оберіть групу для студента"
+
+#: views/students.py:103
+msgid "Select correct group"
+msgstr "Оберіть корректну групу"
+
+#: views/students.py:128 views/students.py:176
+msgid "Student added successfully"
+msgstr "Студента успішно додано"
+
+#: views/students.py:136 views/students.py:180
+msgid "Editing canceled"
+msgstr "Редагування скасовано"
+
+#: views/students.py:165
+msgid "Save"
+msgstr "Зберегти"
+
+#: views/students.py:166
+msgid "Cancel"
+msgstr "Скасувати"
+
+#: views/students.py:190
+msgid "Student deleted"
+msgstr "Студетна видалено"
