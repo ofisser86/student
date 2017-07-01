@@ -22,6 +22,8 @@ from students.views.students import StudentUpdateView, StudentDeleteView
 from students.views.journal import JournalView
 from students.views.set_language import set_language
 from django.views.i18n import JavaScriptCatalog
+from django.contrib.auth import views as auth_views
+from django.views.generic.base import RedirectView
 from .settings import MEDIA_ROOT, DEBUG
 if settings.DEBUG:
     import debug_toolbar
@@ -67,7 +69,12 @@ urlpatterns = [
     # Translate
 
     url(r'^jsi18n/$', JavaScriptCatalog.as_view(), name='javascript-catalog'),
-    url('^set-language/$',  set_language, name='set_language')
+    url(r'^set-language/$',  set_language, name='set_language'),
     # serve files from media folder
+
+    # User Related urls
+    url(r'^users/logout/$', auth_views.logout, kwargs={'next_page':'home'}, name='auth_logout'),
+    url(r'^register/complete/$', RedirectView.as_view(pattern_name='home'), name='registration_complete'),
+    url(r'^users/', include('registration.backends.simple.urls', namespace='users'))
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

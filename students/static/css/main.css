@@ -49,7 +49,8 @@ th.day-header {
 
 #lang-select {
     margin-top: 14px;
-    padding: 0;
+    /*padding: 0;*/
+    float: left;
 }
 #lang-select button {
     padding: 0;
@@ -57,4 +58,9 @@ th.day-header {
 .lang-select-form {
     display:inline-block;
 }
-
+/* User's Toolbar */
+#user-toolbar {
+    margin-top: 30px;
+    text-align: right;
+    float:right;
+}
