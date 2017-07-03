@@ -16,6 +16,8 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.conf import settings
 from django.contrib import admin
+from django.contrib.auth.decorators import login_required
+
 from django.conf.urls.static import static
 from students.views import students, groups, journal, exams, contact_admin
 from students.views.students import StudentUpdateView, StudentDeleteView
@@ -38,10 +40,10 @@ urlpatterns = [
 
     # Groups url
 
-    url(r'^groups/$', groups.groups_list, name='groups_list'),
-    url(r'^groups/add/$', groups.groups_add, name='groups_add'),
-    url(r'^groups/(?P<gid>\d+)/edit/$', groups.groups_edit, name='groups_edit'),
-    url(r'^groups/(?P<gid>\d+)/delete/$', groups.groups_delete, name='groups_delete'),
+    url(r'^groups/$', login_required(groups.groups_list), name='groups_list'),
+    url(r'^groups/add/$', login_required(groups.groups_add), name='groups_add'),
+    url(r'^groups/(?P<gid>\d+)/edit/$', login_required(groups.groups_edit), name='groups_edit'),
+    url(r'^groups/(?P<gid>\d+)/delete/$', login_required(groups.groups_delete), name='groups_delete'),
 
     # Journal url
 

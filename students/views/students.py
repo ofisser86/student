@@ -5,11 +5,14 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.urls import reverse
 from datetime import datetime
 from django.utils.translation import ugettext as _
+from django.utils.decorators import method_decorator
+from django.contrib.auth.decorators import login_required
+
 
 from django.forms import ModelForm
 from django.views.generic import UpdateView, DeleteView
 from crispy_forms.helper import FormHelper
-from  crispy_forms.layout import Submit
+from crispy_forms.layout import Submit
 from crispy_forms.bootstrap import FormActions
 
 from ..util import paginate, get_current_group
@@ -54,6 +57,7 @@ def students_list(request):
     return render(request, 'students/students_list.html', {'students': students})
 
 
+@login_required
 def students_add(request):
     # was form posted?
     if request.method == 'POST':
@@ -181,6 +185,10 @@ class StudentUpdateView(UpdateView):
         else:
             return super(StudentUpdateView, self).post(request, *args, **kwargs)
 
+    @method_decorator(login_required)
+    def dispatch(self, request, *args, **kwargs):
+        return super(StudentUpdateView, self).dispatch(*args, **kwargs)
+
 
 class StudentDeleteView(DeleteView):
     model = Student
@@ -188,3 +196,7 @@ class StudentDeleteView(DeleteView):
 
     def get_success_url(self):
         return u'%s?status_message=%s' % (reverse('home'), _(u"Student deleted"))
+
+    @method_decorator(login_required)
+    def dispatch(self, request, *args, **kwargs):
+        return super(StudentDeleteView, self).dispatch(*args, **kwargs)

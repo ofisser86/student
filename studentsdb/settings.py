@@ -163,12 +163,13 @@ LANGUAGE_CODE = 'uk'
 TIME_ZONE = 'UTC'
 
 USE_I18N = True
-
 USE_L10N = True
-
 USE_TZ = True
 
 REGISTRATION_OPEN = True
+
+LOGIN_URL = 'users:auth_login'
+LOGOUT_URL = 'users:auth_logout'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
