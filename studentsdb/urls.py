@@ -25,7 +25,7 @@ from students.views.journal import JournalView
 from students.views.set_language import set_language
 from django.views.i18n import JavaScriptCatalog
 from django.contrib.auth import views as auth_views
-from django.views.generic.base import RedirectView
+from django.views.generic.base import RedirectView, TemplateView
 from .settings import MEDIA_ROOT, DEBUG
 if settings.DEBUG:
     import debug_toolbar
@@ -75,6 +75,8 @@ urlpatterns = [
     # serve files from media folder
 
     # User Related urls
+    url(r'^user/profile/$', login_required(TemplateView.as_view(template_name='registration/profile.html')),
+        name='profile'),
     url(r'^users/logout/$', auth_views.logout, kwargs={'next_page':'home'}, name='auth_logout'),
     url(r'^register/complete/$', RedirectView.as_view(pattern_name='home'), name='registration_complete'),
     url(r'^users/', include('registration.backends.simple.urls', namespace='users'))

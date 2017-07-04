@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'students',
     'registration',
     'debug_toolbar',
+    'studentsdb',
 ]
 # INTERNAL_IPS
 INTERNAL_IPS = ['127.0.0.1']
