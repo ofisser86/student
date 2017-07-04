@@ -17,7 +17,7 @@ class StProfile(models.Model):
         max_length=12,
         blank=True,
         verbose_name=_(u"Mobile phone"),
-        default="")
+        default='')
 
     def __unicode__(self):
         return self.user.username

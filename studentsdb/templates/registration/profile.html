@@ -30,6 +30,13 @@
             </tr>
         {% endif %}
 
+        {% if user.stprofile.mobile_phone %}
+            <tr>
+                <td>{% trans "Mobile phone" %}:</td>
+                <td>{{ user.stprofile.mobile_phone }}</td>
+            </tr>
+        {% endif %}
+
     </table>
 
 {% endblock content %}
