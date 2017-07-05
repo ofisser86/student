@@ -77,8 +77,11 @@ urlpatterns = [
     # User Related urls
     url(r'^user/profile/$', login_required(TemplateView.as_view(template_name='registration/profile.html')),
         name='profile'),
-    url(r'^users/logout/$', auth_views.logout, kwargs={'next_page':'home'}, name='auth_logout'),
+    url(r'^users/logout/$', auth_views.logout, kwargs={'next_page': 'home'}, name='auth_logout'),
     url(r'^register/complete/$', RedirectView.as_view(pattern_name='home'), name='registration_complete'),
-    url(r'^users/', include('registration.backends.simple.urls', namespace='users'))
+    url(r'^users/', include('registration.backends.simple.urls', namespace='users')),
+
+    # Social Auth Related urls
+    url(r'^social/', include('social.apps.django_app.urls', namespace='social'))
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

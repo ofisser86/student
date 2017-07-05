@@ -49,6 +49,8 @@ INSTALLED_APPS = [
     'registration',
     'debug_toolbar',
     'studentsdb',
+    'social.apps.django_app.default',
+    'social_django',
 ]
 # INTERNAL_IPS
 INTERNAL_IPS = ['127.0.0.1']
@@ -83,6 +85,8 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'studentsdb.context_processors.students_proc',
                 'students.context_processors.groups_processor',
+                'social.apps.django_app.context_processors.backends',
+                'social.apps.django_app.context_processors.login_redirect',
             ],
         },
     },
@@ -94,6 +98,13 @@ WSGI_APPLICATION = 'studentsdb.wsgi.application'
 
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators
+AUTHENTICATION_BACKENDS = (
+        'social.backends.facebook.FacebookOAuth2',
+        'django.contrib.auth.backends.ModelBackend',
+
+)
+SOCIAL_AUTH_FACEBOOK_KEY = '1578444792225670'
+SOCIAL_AUTH_FACEBOOK_SECRET = '050ffd6070f05c9ed9d4dad6aa36d238'
 
 AUTH_PASSWORD_VALIDATORS = [
     {
