@@ -56,6 +56,7 @@ INSTALLED_APPS = [
 INTERNAL_IPS = ['127.0.0.1']
 
 MIDDLEWARE = [
+    'studentsdb.middleware.RequestTimeMiddleware',
     'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.middleware.locale.LocaleMiddleware',
