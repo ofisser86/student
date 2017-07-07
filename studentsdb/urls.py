@@ -19,6 +19,8 @@ from django.contrib import admin
 from django.contrib.auth.decorators import login_required
 
 from django.conf.urls.static import static
+from django.views.i18n import JavaScriptCatalog
+
 from students.views import students, groups, journal, exams, contact_admin
 from students.views.students import StudentUpdateView, StudentDeleteView
 from students.views.journal import JournalView
@@ -29,6 +31,11 @@ from django.views.generic.base import RedirectView, TemplateView
 from .settings import MEDIA_ROOT, DEBUG
 if settings.DEBUG:
     import debug_toolbar
+
+js_info_dict = {
+    'packages': ('my.package',),
+
+}
 
 urlpatterns = [
     # Students urls
@@ -61,6 +68,10 @@ urlpatterns = [
     url(r'^contact-admin/$', contact_admin.contact_admin, name='contact_admin'),
     # Form contact with used django-contact-form
     # url(r'^contact/', include('contact_form.urls')),
+
+    # i18N
+
+    url(r'^jsi18n/$', JavaScriptCatalog.as_view(), name='js_info_dict'),
 
     url(r'^admin/', admin.site.urls),
 
