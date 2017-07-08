@@ -1,0 +1,76 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-07-08 13:33+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: models.py:12
+msgid "User Profile"
+msgstr "Профіль користувача"
+
+#: models.py:19 templates/registration/profile.html:35
+msgid "Mobile phone"
+msgstr "Мобільний телефон"
+
+#: templates/registration/login.html:5 templates/registration/login.html:7
+msgid "Login form"
+msgstr "Форма входу"
+
+#: templates/registration/login.html:16
+#: templates/registration/registration_form.html:23
+msgid "Your username"
+msgstr "Ваше ім'я користувача"
+
+#: templates/registration/login.html:20
+#: templates/registration/registration_form.html:33
+msgid "Your password"
+msgstr "Пароль"
+
+#: templates/registration/login.html:23
+#: templates/registration/registration_form.html:42
+msgid "Login"
+msgstr "Логін"
+
+#: templates/registration/profile.html:14
+msgid "Email"
+msgstr "Email"
+
+#: templates/registration/profile.html:21
+msgid "Username"
+msgstr "Ім'я користувача"
+
+#: templates/registration/profile.html:28
+msgid "Joined"
+msgstr "Дата реэстраціъ"
+
+#: templates/registration/registration_form.html:5
+#: templates/registration/registration_form.html:7
+msgid "Register form"
+msgstr "Форма реєстрації"
+
+#: templates/registration/registration_form.html:12
+msgid "Please, correct the following errors."
+msgstr "Будь-ласка виправіть помилки"
+
+#: templates/registration/registration_form.html:28
+msgid "Your email"
+msgstr "Ваша email адреса"
+
+#: templates/registration/registration_form.html:38
+msgid "Confirm password"
+msgstr "Підтвердження паролю"

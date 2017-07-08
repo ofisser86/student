@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-30 11:32+0000\n"
+"POT-Creation-Date: 2017-07-08 13:26+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,7 +21,7 @@ msgstr ""
 msgid "Student"
 msgstr ""
 
-#: models/students.py:11 templates/students/base.html:49
+#: models/students.py:11 templates/students/base.html:86
 #: templates/students/students_list.html:5
 msgid "Students"
 msgstr ""
@@ -59,7 +59,7 @@ msgid "Extra notes"
 msgstr ""
 
 #: templates/students/base.html:7 templates/students/base.html:28
-#: templates/students/base.html:84
+#: templates/students/base.html:125
 msgid "Students Accounting Service"
 msgstr ""
 
@@ -67,27 +67,43 @@ msgstr ""
 msgid "App to manage students database"
 msgstr ""
 
-#: templates/students/base.html:31
+#: templates/students/base.html:33
 msgid "Group:"
 msgstr ""
 
-#: templates/students/base.html:33
+#: templates/students/base.html:35
 msgid "All students"
 msgstr ""
 
-#: templates/students/base.html:51 templates/students/students_list.html:65
-msgid "Journal"
+#: templates/students/base.html:46
+msgid "Logout"
+msgstr ""
+
+#: templates/students/base.html:53
+msgid "via Facebook"
 msgstr ""
 
 #: templates/students/base.html:54
+msgid "Login"
+msgstr ""
+
+#: templates/students/base.html:55
+msgid "Register"
+msgstr ""
+
+#: templates/students/base.html:89 templates/students/students_list.html:70
+msgid "Journal"
+msgstr ""
+
+#: templates/students/base.html:92
 msgid "Groups"
 msgstr ""
 
-#: templates/students/base.html:56
+#: templates/students/base.html:94
 msgid "Exams"
 msgstr ""
 
-#: templates/students/base.html:58
+#: templates/students/base.html:98
 msgid "Contact"
 msgstr ""
 
@@ -122,62 +138,62 @@ msgid "Ticket #"
 msgstr ""
 
 #: templates/students/students_list.html:39
-#: templates/students/students_list.html:60
+#: templates/students/students_list.html:65
 msgid "Actions"
 msgstr ""
 
-#: templates/students/students_list.html:64
+#: templates/students/students_list.html:69
 msgid "Edit"
 msgstr ""
 
-#: templates/students/students_list.html:66
+#: templates/students/students_list.html:71
 msgid "Delete"
 msgstr ""
 
-#: views/students.py:70
+#: views/students.py:94
 msgid "First name field is required"
 msgstr ""
 
-#: views/students.py:76
+#: views/students.py:100
 msgid "Last name field is required"
 msgstr ""
 
-#: views/students.py:82
+#: views/students.py:106
 msgid "Birthday field is required"
 msgstr ""
 
-#: views/students.py:87
+#: views/students.py:111
 msgid "Enter correct format date (as example 1984-12-30)"
 msgstr ""
 
-#: views/students.py:93
+#: views/students.py:117
 msgid "Ticket field is required"
 msgstr ""
 
-#: views/students.py:99
+#: views/students.py:123
 msgid "Select student group"
 msgstr ""
 
-#: views/students.py:103
+#: views/students.py:127
 msgid "Select correct group"
 msgstr ""
 
-#: views/students.py:128 views/students.py:176
+#: views/students.py:152 views/students.py:200
 msgid "Student added successfully"
 msgstr ""
 
-#: views/students.py:136 views/students.py:180
+#: views/students.py:160 views/students.py:204
 msgid "Editing canceled"
 msgstr ""
 
-#: views/students.py:165
+#: views/students.py:189
 msgid "Save"
 msgstr ""
 
-#: views/students.py:166
+#: views/students.py:190
 msgid "Cancel"
 msgstr ""
 
-#: views/students.py:190
+#: views/students.py:218
 msgid "Student deleted"
 msgstr ""
