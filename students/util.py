@@ -70,4 +70,3 @@ def get_current_group(request):
             return group
     else:
         return None
-
