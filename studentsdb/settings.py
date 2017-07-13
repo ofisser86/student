@@ -9,13 +9,26 @@ https://docs.djangoproject.com/en/1.10/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.10/ref/settings/
 """
+from django.conf import global_settings
+
+from .env_settings import SECRET_KEY, DEBUG, TEMPLATE_DEBUG, ALLOWED_HOSTS
+from .env_settings import SOCIAL_AUTH_FACEBOOK_SECRET, SOCIAL_AUTH_FACEBOOK_KEY
+from .env_settings import DATABASES, STATIC_URL, MEDIA_URL, MEDIA_ROOT
+from .env_settings import ADMIN_EMAIL, EMAIL_HOST, EMAIL_PORT, EMAIL_USE_SSL
+from .env_settings import EMAIL_HOST_USER, EMAIL_HOST_PASSWORD, EMAIL_USE_TLS
+from .env_settings import PORTAL_URL
+
+# in dev envrironment we may not have STATIC_ROOT defined
+try:
+    from .env_settings import STATIC_ROOT
+except ImportError:
+    pass
 
 import os
-from .db import DATABASES
-from .email import *
+
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 LOG_FILE = os.path.join(BASE_DIR, 'studentsdb.log')
-PORTAL_URL = 'http://localhost:8000'
+# PORTAL_URL = 'http://localhost:8000'
 
 
 
@@ -27,12 +40,12 @@ PORTAL_URL = 'http://localhost:8000'
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'fd*@&kqsw-$cgfo2al87vl$jb2ldy__)_oug(h3z6m+5uuc9gh'
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+#DEBUG = True
 
-ALLOWED_HOSTS = []
+#ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -104,8 +117,8 @@ AUTHENTICATION_BACKENDS = (
         'django.contrib.auth.backends.ModelBackend',
 
 )
-SOCIAL_AUTH_FACEBOOK_KEY = '1578444792225670'
-SOCIAL_AUTH_FACEBOOK_SECRET = '050ffd6070f05c9ed9d4dad6aa36d238'
+# SOCIAL_AUTH_FACEBOOK_KEY = '1578444792225670'
+# SOCIAL_AUTH_FACEBOOK_SECRET = '050ffd6070f05c9ed9d4dad6aa36d238'
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -187,11 +200,11 @@ LOGOUT_URL = 'users:auth_logout'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
-STATIC_URL = '/static/'
+# STATIC_URL = '/static/'
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, '..', 'media')
+# MEDIA_URL = '/media/'
+# MEDIA_ROOT = os.path.join(BASE_DIR, '..', 'media')
 
-PORTAL_URL = 'http://localhost:8000'
+# PORTAL_URL = 'http://localhost:8000'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
