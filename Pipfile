@@ -1,0 +1,24 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+
+[packages]
+django = "==1.10.6"
+django-registration-redux = "==1.4"
+olefile = "==0.44"
+pillow = "==4.0.0"
+django-crispy-forms = "==1.6.1"
+python-social-auth = "==0.3.6"
+django-allauth = "==0.31.0"
+social-auth-app-django = "==1.1.0"
+django-facebook-connect = "==1.0.1"
+python-magic = "==0.4.12"
+six = "==1.10.0"
+python-dateutil = "==2.6.0"
+psycopg2 = "==2.6.2"
+
+[requires]
+python_version = "2.7"
