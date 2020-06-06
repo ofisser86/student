@@ -6,7 +6,7 @@ verify_ssl = true
 [dev-packages]
 
 [packages]
-django = "==1.10.6"
+django = "==1.11.29"
 django-registration-redux = "==1.4"
 olefile = "==0.44"
 pillow = "==4.0.0"
